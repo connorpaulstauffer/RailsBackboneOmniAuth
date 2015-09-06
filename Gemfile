@@ -19,6 +19,7 @@ gem 'omniauth-linkedin'
 gem 'omniauth-github'
 gem 'uuidtools'
 gem "figaro"
+gem 'bootstrap-sass', '~> 3.2.0'
 
 group :development, :test do
   gem 'byebug'
