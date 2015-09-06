@@ -18,6 +18,7 @@ gem 'omniauth-google'
 gem 'omniauth-linkedin'
 gem 'omniauth-github'
 gem 'uuidtools'
+gem "figaro"
 
 group :development, :test do
   gem 'byebug'
