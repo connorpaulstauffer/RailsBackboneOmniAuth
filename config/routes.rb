@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'root#root', controllers: {
-    sessions: 'users/sessions'
-  }
+  devise_for :users,
+             controllers: {sessions: 'sessions', registrations: 'registrations'}
+             
+  root to: 'root#root'
 end
