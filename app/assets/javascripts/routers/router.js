@@ -3,6 +3,7 @@ RBOA.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.$rootContent = this.$rootEl.find("#content");
     this.$navBar = this.$rootEl.find("#navbar");
+    this.$modalContent = this.$rootEl.find("#modal");
 
     this.checkCurrentUser();
     this.setupNavbar();
@@ -31,15 +32,29 @@ RBOA.Routers.Router = Backbone.Router.extend({
   },
 
   signUp: function () {
-    var signUpView = new RBOA.Views.SignUp();
+    var user = new RBOA.Models.User();
+    var signUpView = new RBOA.Views.SignUp({ model: user });
     this.openModal(signUpView);
   },
 
   openModal: function (newModal) {
-    this.currentModal && this.currentModal.remove();
+    if (this.currentModal) {
+      this.currentModal.remove();
+    } else {
+      // save previous path for modal close
+      this.path = document.referrer;
+    }
+
+    newModal.router = this;
     this.currentModal = newModal;
-    this.$rootEl.append(newModal.$el);
+    this.$modalContent.html(newModal.$el);
     this.currentModal.render();
+  },
+
+  closeModal: function () {
+    this.currentModal.remove();
+    this.currentModal = null;
+    Backbone.history.navigate(this.path);
   },
 
   swap: function (newView) {

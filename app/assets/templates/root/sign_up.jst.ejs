@@ -1,26 +1,23 @@
-<div class="modal-contents" id="sign-up-container">
+<form class="modal-contents" id="sign-up-form">
   <div class="form-group">
-    <label for="user-name">Name</label>
     <input type="name"
            class="form-control"
            id="user-name"
            name="user[name]"
-           placeholder="Name"
+           placeholder="Full name"
            autofocus>
   </div>
 
   <div class="form-group">
-    <label for="user-email">Email address</label>
     <input type="email"
            class="form-control"
            id="user-email"
            name="user[email]"
-           placeholder="Email"
+           placeholder="Email address"
            autofocus>
   </div>
 
   <div class="form-group">
-    <label for="user-password">Password</label>
     <input type="password"
            class="form-control"
            id="user-password"
@@ -29,11 +26,14 @@
   </div>
 
   <div class="form-group">
-    <label for="user-password-confirmation">Password Confirmation</label>
     <input type="password"
            class="form-control"
            id="user-password-confirmation"
-           name="user[password-confirmation]"
+           name="user[password_confirmation]"
            placeholder="Password Confirmation">
   </div>
+
+  <button type="submit" class="modal-button btn btn-primary" id="sign-up-button">
+    Sign Up
+  </button>
 </div>

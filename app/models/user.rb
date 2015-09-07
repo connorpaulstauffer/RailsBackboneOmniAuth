@@ -19,7 +19,7 @@
 #
 
 class User < ActiveRecord::Base
-  validates :email, :name, presence: true
+  # validates :email, :name, presence: true
 
   has_many :authorizations, :dependent => :destroy
 
