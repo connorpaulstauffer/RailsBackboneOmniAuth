@@ -9,7 +9,8 @@ RBOA.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "sign-up": "signUp"
+    "sign-up": "signUp",
+    "log-in": "logIn"
   },
 
   checkCurrentUser: function () {
@@ -17,10 +18,10 @@ RBOA.Routers.Router = Backbone.Router.extend({
     if (currentUserId == "") {
       RBOA.currentUser = null;
     } else {
-      // RBOA.currentUser = new RBOA.Models.User({
-      //   id: this.$rootEl.data("current-user")
-      // });
-      // RBOA.currentUser.fetch();
+      RBOA.currentUser = new RBOA.Models.User({
+        id: this.$rootEl.data("current-user")
+      });
+      RBOA.currentUser.fetch();
     }
   },
 
@@ -31,9 +32,13 @@ RBOA.Routers.Router = Backbone.Router.extend({
   },
 
   signUp: function () {
-    var user = new RBOA.Models.User();
-    var signUpView = new RBOA.Views.SignUp({ model: user });
+    var signUpView = new RBOA.Views.SignUp();
     this.openModal(signUpView);
+  },
+
+  logIn: function () {
+    var logInView = new RBOA.Views.LogIn();
+    this.openModal(logInView);
   },
 
   setCurrentUser: function () {
