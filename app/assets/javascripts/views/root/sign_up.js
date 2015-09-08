@@ -1,20 +1,8 @@
-RBOA.Views.SignUp = Backbone.View.extend({
-  initialize: function () {
-    $( document ).on("keydown.modal", this.handleKeyPress.bind(this))
-  },
-
-  className: "modal-container",
-
+RBOA.Views.SignUp = RBOA.Modal.extend({
   template: JST["root/sign_up"],
 
   events: {
     "click #sign-up-button": "signUp"
-  },
-
-  handleKeyPress: function (event) {
-    if (event.which == 27) {
-      this.router.closeModal();
-    }
   },
 
   signUp: function (event) {
@@ -36,17 +24,5 @@ RBOA.Views.SignUp = Backbone.View.extend({
         debugger
       }
     })
-  },
-
-  render: function () {
-    var content = this.template({ errors: this.errors });
-    this.$el.html(content);
-
-    return this;
-  },
-
-  remove: function () {
-    $( document ).off("keydown.modal");
-    Backbone.View.prototype.remove.call(this);
   }
 });
