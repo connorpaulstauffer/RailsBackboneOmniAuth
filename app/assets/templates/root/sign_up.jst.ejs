@@ -1,39 +1,49 @@
-<form class="modal-contents" id="sign-up-form">
-  <div class="form-group">
-    <input type="name"
-           class="form-control"
-           id="user-name"
-           name="user[name]"
-           placeholder="Full name"
-           autofocus>
+<div class="modal-contents">
+  <div class="social-sign-up-buttons">
+    <button type="submit"
+            class="modal-button btn btn-primary social-sign-up"
+            id="facebook">
+      Sign up with Facebook
+    </button>
   </div>
 
-  <div class="form-group">
-    <input type="email"
-           class="form-control"
-           id="user-email"
-           name="user[email]"
-           placeholder="Email address"
-           autofocus>
-  </div>
+  <form id="sign-up-form">
+    <div class="form-group">
+      <input type="name"
+             class="form-control"
+             id="user-name"
+             name="user[name]"
+             placeholder="Full name"
+             autofocus>
+    </div>
 
-  <div class="form-group">
-    <input type="password"
-           class="form-control"
-           id="user-password"
-           name="user[password]"
-           placeholder="Password">
-  </div>
+    <div class="form-group">
+      <input type="email"
+             class="form-control"
+             id="user-email"
+             name="user[email]"
+             placeholder="Email address"
+             autofocus>
+    </div>
 
-  <div class="form-group">
-    <input type="password"
-           class="form-control"
-           id="user-password-confirmation"
-           name="user[password_confirmation]"
-           placeholder="Password Confirmation">
-  </div>
+    <div class="form-group">
+      <input type="password"
+             class="form-control"
+             id="user-password"
+             name="user[password]"
+             placeholder="Password">
+    </div>
 
-  <button type="submit" class="modal-button btn btn-primary" id="sign-up-button">
-    Sign Up
-  </button>
+    <div class="form-group">
+      <input type="password"
+             class="form-control"
+             id="user-password-confirmation"
+             name="user[password_confirmation]"
+             placeholder="Password Confirmation">
+    </div>
+
+    <button type="submit" class="modal-button btn btn-primary" id="sign-up-button">
+      Sign Up
+    </button>
+  </div>
 </div>
