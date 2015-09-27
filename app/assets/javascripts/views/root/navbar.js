@@ -7,7 +7,7 @@ RBOA.Views.NavBar = Backbone.View.extend({
 
   signOut: function (event) {
     event.preventDefault();
-    
+
     $.ajax({
       url: "/users/sign_out",
       method: "DELETE",

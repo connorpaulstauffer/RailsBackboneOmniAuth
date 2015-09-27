@@ -24,5 +24,5 @@ RBOA.Views.LogIn = RBOA.Modal.extend({
         debugger
       }
     })
-  },
+  }
 });
